@@ -36,8 +36,8 @@ jobs:
       
       - name: commit
         run: |
-          git config --global user.email zhagnjq1994@gmail.com
-          git config --global user.name zhangjianqiang
+          git config --global user.email 18842672676@163.com
+          git config --global user.name niudawang
           git add .
           git commit -m "update log" -a
       - name: Push changes
