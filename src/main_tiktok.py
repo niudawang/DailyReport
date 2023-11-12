@@ -63,6 +63,13 @@ if __name__ == "__main__":
             json_str = json.dumps(user_dicts)
             with open(file_path, 'w') as json_file:
                 json.dump(user_dicts, json_file)
+            cmd_git_add = 'git add data.json'
+            cmd_git_commit = 'git commit -m data.json'
+            cmd_git_push = 'git push -u origin master'
+
+            os.system(cmd_git_add)
+            os.system(cmd_git_commit)
+            os.system(cmd_git_push)
         else:
             print('本次不执行')
     except Exception as err:
