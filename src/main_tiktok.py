@@ -46,17 +46,23 @@ if __name__ == "__main__":
                         print(err)
 
                     if yesterday == None:
-                        result += info.toString()
+                        result += info.toString1()
                     else:
-                        result += info.toString(yesterday.followCount, yesterday.fansCount,
-                                                yesterday.likeCount, yesterday.videoCount)
+                        result += info.toString2(yesterday['followCount'], yesterday['fansCount'],
+                                                yesterday['likeCount'], yesterday['videoCount'])
 
             weixin.wxpusher_send_by_webapi(
                 result, "TikTok日报", wxpusher_token, wechat_uid)
 
             # 保存文件
+
+            # 将结构体列表转换为字典列表
+            user_dicts = [user.to_dict() for user in users]
+
+            # 将字典列表转换为JSON字符串
+            json_str = json.dumps(user_dicts)
             with open(file_path, 'w') as json_file:
-                json.dump(result, json_file)
+                json.dump(user_dicts, json_file)
         else:
             print('本次不执行')
     except Exception as err:
