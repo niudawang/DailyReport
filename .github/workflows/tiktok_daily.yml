@@ -3,6 +3,8 @@ name: TikTok日报
 on:
   schedule:
     - cron: '10 12 * * *'  # 每天的20:10执行
+  workflow_dispatch:
+
   # push:
   #   branches:
   #     - master
