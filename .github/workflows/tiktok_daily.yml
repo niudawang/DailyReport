@@ -34,13 +34,13 @@ jobs:
       - name: 运行python脚本
         run: python src/main_tiktok.py 
       
-      - name: commit
-        run: |
-          git config --global user.email 18842672676@163.com
-          git config --global user.name niudawang
-          git add .
-          git commit -m "update log" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: commit
+#        run: |
+#          git config --global user.email 18842672676@163.com
+#          git config --global user.name niudawang
+#          git add .
+#          git commit -m "update log" -a
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
