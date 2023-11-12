@@ -12,4 +12,5 @@ def wxpusher_send_by_webapi(msg, summary, app_token, uid):
         "uids": [uid, ],
     }
     result = requests.post(url=webapi, json=data)
+    print(result.text)
     return result.text
